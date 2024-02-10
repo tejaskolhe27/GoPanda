@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GoPanda</title>
+    <link rel="shortcut icon" href="img/logo2.png">
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container-fluid">
+            <img class="img-fluid" src="img/logo2.png" style="height:50px;">
+            <a href="homepage.html" class="navbar-brand">Go<span>Panda</span></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto">
+
+                    <a href="" class="nav-item nav-link active">Home</a>
+                    <a href="#about" class="nav-item nav-link">About</a>
+                    <a class="nav-item nav-link" data-toggle="modal" data-target="#aloginPage">Business with Go Panda</a>
+                    <a href="" class="nav-item nav-link" data-toggle="modal" data-target="#signupPage">Signup</a>
+                    <a class="nav-item nav-link" data-toggle="modal" data-target="#loginPage">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Nav Bar End -->
+
+    <!--Signin Page Content-->
+    <div class="modal fade" id="signupPage">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header text-center">
+                    <h4 class="modal-title text-center w-100 font-weight-bold">Sign Up</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-lable="close">&times;</button>
+                </div>
+				
+				<form method = "POST" action = "signup.php" >
+                <div class="modal-body mx-3">
+
+                    <div class="md-form mb-5">
+                        <i class="fas fa-user prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right">Your Name</label>
+                        <input type="text" placeholder="Enter Name..." class="form-control validate" name="name" id="uname">
+                    </div>
+
+                    <div class="md-form mb-5">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right">Your Email</label>
+                        <input type="email" placeholder="Enter Email..." name="uname"class="form-control validate">
+                    </div>
+
+                    <div class="md-form mb-5">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right">Your Password</label>
+                        <input type="password" placeholder="Enter Password..." name="pass" class="form-control validate">
+
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-warning" type="submit"> Sign Up</button>
+                </div>
+				</form>
+            </div>
+        </div>
+    </div>
+    <!--Sign in page content end-->
+
+    <!--Login Page Content Start-->
+	
+    <div class="modal fade" id="loginPage">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold">Log in</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-lable="close">&times;</button>
+                </div>
+
+                <div class="modal-body mx-4">
+				
+                <form method = "POST" action = "logincheck.php">    
+                    <div class="md-form">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right">Your Email</label>
+                        <input type="email" class="form-control validate" name="uname" id="uname"><br>
+                    </div>
+						
+                    <div class="md-form">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right">Your Password</label>
+                        <input type="password" class="form-control validate" name="pass" id="pass"><br>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <button type="submit"  class="btn btn-warning btn-block z-depth-la">Log In</button>
+                    </div>
+					
+				</form>
+				
+                <br><br>
+            </div>
+        </div>
+    </div>
+	</div>
+	</form>
+    <!--Login content end-->
+    <!-- admin Login Page Content Start-->
+	
+    <div class="modal fade" id="aloginPage">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold"> Admin Log in</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-lable="close">&times;</button>
+                </div>
+
+                <div class="modal-body mx-4">
+				
+                <form method = "POST" action = "admin_login.php">    
+                    <div class="md-form">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right">Your Email</label>
+                        <input type="email" class="form-control validate" name="uname" id="uname"><br>
+                    </div>
+						
+                    <div class="md-form">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right">Your Password</label>
+                        <input type="password" class="form-control validate" name="pass" id="pass"><br>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <button type="submit"  class="btn btn-warning btn-block z-depth-la">Log In</button>
+                    </div>
+					
+				</form>
+				
+                <br><br>
+            </div>
+        </div>
+    </div>
+	</div>
+	</form>
+    <!-- admin Login content end-->
+    <!-- Carousel Start -->
+    <div class="carousel">
+        <div class="container-fluid">
+            <div class="owl-carousel">
+                <div class="carousel-item">
+                    <div class="carousel-img">
+                        <img src="img/grocery.jpg" alt="Image">
+                    </div>
+                    <div class="carousel-text">
+                        <h1>Best <span>Quality</span> PRODUCT</h1>
+                        <p>
+                            Our goal here is to provide low price on high-quality products and excellent services to
+                            consumers
+                        </p>
+                        <div class="carousel-btn">
+                            <a class="btn custom-btn" data-toggle="modal" data-target="#signupPage" href="">SIGNUP</a>
+                            <a class="btn custom-btn" href="" data-toggle="modal" data-target="#loginPage">LOGIN</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-img">
+                        <img src="img/delboy.jpg" alt="Image">
+                    </div>
+                    <div class="carousel-text">
+                        <h1>World’s <span>Best</span>Delivery Partner's</h1>
+                        <p>
+                            -We don’t deliver parcels, we deliver smiles.#smilesdelivered
+                        </p>
+                        <div class="carousel-btn">
+                            <a class="btn custom-btn" data-toggle="modal" data-target="#signupPage" href="">SIGNUP</a>
+                            <a class="btn custom-btn" href="" data-toggle="modal" data-target="#loginPage">LOGIN</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-img">
+                        <img src="img/delboy2.jpg" alt="Image">
+                    </div>
+                    <div class="carousel-text">
+                        <h1>Fastest Order <span>Delivery</span></h1>
+                        <p>
+                            I'm real particular about delivery. You can write the illest rhymes in the world, but can
+                            you deliver it right?
+                        </p>
+                        <div class="carousel-btn">
+                            <a class="btn custom-btn" data-toggle="modal" data-target="#signupPage" href="">SIGNUP</a>
+                            <a class="btn custom-btn" href="" data-toggle="modal" data-target="#loginPage">LOGIN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- About Start -->
+    <div class="about" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <video width="500" height="250" playsinline="playsinline" autoplay="autoplay" muted="muted"
+                            loop="loop">
+                            <source src="video1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-header">
+                            <p>About Us</p>
+
+                        </div>
+                        <div class="about-text">
+                            <p>
+                                Living in the city, we never have enough time to do all the things we want to do.<br>
+
+                                GoPanda can change the way you move things, how you shop and lets you access your city
+                                like never before. We’re an app that connects you to the nearest delivery partner who
+                                can make purchases, pick up items from any store or restaurant in the city and bring
+                                them to you.
+
+                                <br>It’s never easy to make purchases or drop off packages when you get busy with work,
+                                get stuck in traffic, or you might even end up forgetting about it completely.
+                            </p>
+                            <p>
+                                All you need to do is,<br>
+                                Tell us where to go, what needs to be done and when.<br>
+                                What happens next? Sit back, and let us worry about your task-at-hand.<br>
+                                You could say that we are always on the move for you.<br>
+                            </p>
+                            <!--<a class="btn custom-btn" href="">Book A Table</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Video Modal Start-->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal End -->
+
+
+    <!-- Feature Start -->
+    <div class="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="section-header">
+                        <p>Why Choose Us</p>
+                        <h2>Our Key Features</h2>
+                    </div>
+                    <div class="feature-text">
+                        <div class="feature-img">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="img/feature-1.jpg" alt="Image">
+                                </div>
+                                <div class="col-6">
+                                    <img src="img/dog.jpg" alt="Image">
+                                </div>
+                                <div class="col-6">
+                                    <img src="img/delevery.jpg" alt="Image">
+                                </div>
+                                <div class="col-6">
+                                    <img src="img/grocs.jpg" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Anytime, anywhere and on time, this is what our service mean. We set the standard. We make
+                            the possibility possible, those who can not be seen.
+                        </p>
+                        <!--<a class="btn custom-btn" href="">Book A Table</a> -->
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-cooking"></i>
+                                <h3>Best Restaurant's</h3>
+                                <p>
+                                    From swanky upscale restaurants to the cosiest hidden gems serving the most
+                                    incredible food, GoPanda covers it all. Explore menus, and millions of restaurant
+                                    photos and reviews from users just like you, to find your next great meal.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-fruits-and-vegetables"></i>
+                                <h3>Farm fresh Fruits and Vegies</h3>
+                                <p>
+                                    top quality pulses and food grains, and hundreds of branded items could be
+                                    handpicked and delivered to your home, all at the click of a button?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-medal"></i>
+                                <h3>Best quality products</h3>
+                                <p>
+                                    A high-quality product shouldn't be complicated to use. Customers shouldn't have to
+                                    spend too much time trying to figure out how to assemble or work it.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-meat"></i>
+                                <h3>Fresh meat</h3>
+                                <p>
+                                    GoPanda will build the most loved meat brand by delighting the world with an
+                                    unmatched range of meat and meat products.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-courier"></i>
+                                <h3>Fastest door delivery</h3>
+                                <p>
+                                    Providing end-to-end technology-enabled logistics solutions to small and large
+                                    e-commerce players
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="fas fa-paw"></i>
+                                <h3>Only to Deliver pet products</h3>
+                                <p>
+                                    The reason why we are considered a reliable pet shop online is because we adore
+                                    pet-owners and even more their lovely pets!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    <!-- Team Start -->
+    <div class="team">
+        <div class="container">
+            <div class="section-header text-center">
+                <p>Our Team</p>
+                <h2>Our Founders</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="img/tejas.jpeg" alt="Image">
+                            <div class="team-social">
+                                <a href="https://twitter.com/TejasKolhe20?s=09"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/tejaskolhe27"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.linkedin.com/in/tejas-kolhe-68b401133"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://instagram.com/tejas_kolhe_27?utm_medium=copy_link"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-text">
+                            <h2>Tejas Kolhe</h2>
+                            <p>Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="img/rushi.jpg" alt="Image">
+                            <div class="team-social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://instagram.com/rushy__1609?utm_medium=copy_link"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-text">
+                            <h2>Rushikesh Bandiwadekar</h2>
+                            <p>Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="img/sanika.jpg" alt="Image">
+                            <div class="team-social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.linkedin.com/in/sanika-pharande-1472b8206"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://instagram.com/_saanniikkaa_?utm_medium=copy_link"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-text">
+                            <h2>Sanika Pharande</h2>
+                            <p>Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="img/pranav.jpg" alt="Image">
+                            <div class="team-social">
+                                <a href="https://twitter.com/pranavexe?s=09"><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://instagram.com/pranavexe?utm_medium=copy_link"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-text">
+                            <h2>Pranav Bulbule</h2>
+                            <p>Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="testimonial">
+        <div class="container">
+            <div class="owl-carousel testimonials-carousel">
+                <div class="testimonial-item">
+                    <div class="testimonial-img">
+                        <img src="img/lavesh.jpeg" alt="Image">
+                    </div>
+                    <p>
+                        wonderful and grate service.this site really help me to purchase fruits,etc from my home without
+                        any tension Thank U GoPanda.
+                    </p>
+                    <h2>LAVESH JAIN</h2>
+
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-img">
+                        <img src="img/abhi.jpeg" alt="Image">
+                    </div>
+                    <p>
+                        I'm just thankful to GoPanda, from lockdown I'm using this app. Delivery partners are awesome.
+                        Hope they could even extend their services to all areas.
+                    </p>
+                    <h2>ABHISHEK PRABHU</h2>
+
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-img">
+                        <img src="img/sanskar.jpg" alt="Image">
+                    </div>
+                    <p>
+                        Heyyy, GoPanda is really convenient. And it is practically instant! Got tempted to try a grocery
+                        order, and it is coming in 11 minutes! I'm lovin' it &#128512;
+                    </p>
+                    <h2>SANSKAR SHAHI</h2>
+
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-img">
+                        <img src="img/saurav.jpeg" alt="Image">
+                    </div>
+                    <p>
+                        The best app for ordering groceries, fruits and vegetables and many other essential services.
+                        The service is great for nominal charges.
+                    </p>
+                    <h2>SAURAV WAGH</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <center>
+        <div class="copyright">
+            <div class="container">
+                <p>Copyright &copy; <a href="#">GoPanda</a>, All Right Reserved.</p>
+
+            </div>
+        </div>
+    </center>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js">
+	
+	
+	</script>
+</body>
+
+</html>
